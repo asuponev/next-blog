@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
   const { isSticky } = useScroll()
   const { windowWidth } = useWindowWidth()
 
-  const menuOpen = isMenuOpen ? styles['menu--open'] : ''
+  const menuOpen = isMenuOpen && windowWidth <= 1024 ? styles['menu--open'] : ''
   const menuStick = isSticky && windowWidth > 1024 ? styles['menu--sticky'] : ''
 
   return (
