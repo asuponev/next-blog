@@ -1,7 +1,7 @@
 .menu {
   width: 100%;
   background: $background-primary;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 0.06rem solid $color-border;
   position: sticky;
   top: -4rem;
   z-index: 20;
@@ -14,12 +14,12 @@
   }
 
   @include tablet {
-    width: min(320px, 100%);
+    width: min(20rem, 100%);
     height: 100vh;
     position: fixed;
     top: 0;
-    left: -320px;
-    border: 1px solid $color-border;
+    left: -21rem;
+    border: 0.06rem solid $color-border;
     transition: left 0.3s ease-in-out;
 
     &--open {
@@ -71,7 +71,7 @@
       width: 100%;
       margin: 0;
       padding: 1rem 0;
-      border-bottom: 1px solid $color-border;
+      border-bottom: 0.06rem solid $color-border;
 
       &:last-child {
         border: none;
@@ -111,7 +111,7 @@
       z-index: 10;
       top: 3.4rem;
       background: $background-primary;
-      border: 1px solid $color-border;
+      border: 0.06rem solid $color-border;
       min-width: 11rem;
       cursor: default;
 
@@ -126,7 +126,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 0.42rem 0;
-        border-bottom: 1px solid $color-border;
+        border-bottom: 0.06rem solid $color-border;
         color: $text-primary;
         text-decoration: none;
 
