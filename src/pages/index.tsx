@@ -1,12 +1,9 @@
-import Header from '@/components/header/Header';
-import Menu from '@/components/menu/Menu';
+import Layout from '@/components/layout/Layout'
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <Menu />
-      <div className='test'></div>
-    </>
+    <Layout>
+      <div className="test"></div>
+    </Layout>
   )
 }
