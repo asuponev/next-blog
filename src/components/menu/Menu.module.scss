@@ -3,8 +3,15 @@
   background: $background-primary;
   border-bottom: 1px solid $color-border;
   position: sticky;
+  top: -4rem;
   z-index: 20;
-  top: 0;
+  transition: top 0.3s ease-in-out;
+
+  @include desktop {
+    &--sticky {
+      top: 0;
+    }
+  }
 
   @include tablet {
     width: 320px;
@@ -15,7 +22,7 @@
     border: 1px solid $color-border;
     transition: left 0.3s ease-in-out;
 
-    &__open {
+    &--open {
       left: 0;
     }
   }

@@ -1,4 +1,6 @@
 import useMenu from '@/hooks/useMenu'
+import useScroll from '@/hooks/useScroll'
+import useWindowWidth from '@/hooks/useWindowWidth'
 import menuLinks from '@/constants/menu-links'
 import MenuItem from './menu-item/MenuItem'
 import styles from './Menu.module.scss'
@@ -6,10 +8,15 @@ import MenuHeader from './menu-header/MenuHeader'
 
 const Menu: React.FC = () => {
   const { isMenuOpen, onCloseMenu } = useMenu()
+  const { isSticky } = useScroll()
+  const { windowWidth } = useWindowWidth()
+
+  const menuOpen = isMenuOpen ? styles['menu--open'] : ''
+  const menuStick = isSticky && windowWidth > 1024 ? styles['menu--sticky'] : ''
 
   return (
     <>
-      <div className={`${styles.menu} ${isMenuOpen && styles.menu__open}`}>
+      <div className={`${styles.menu} ${menuOpen} ${menuStick}`}>
         <MenuHeader />
         <nav>
           <ul className={styles.menu__list}>
