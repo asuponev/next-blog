@@ -11,8 +11,8 @@ interface ILayoutProps {
 
 const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({
   children,
-  title = 'Shop',
-  description = 'Shop'
+  title = 'Blog',
+  description = 'Blog'
 }) => {
   return (
     <>
