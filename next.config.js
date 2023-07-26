@@ -8,6 +8,10 @@ const nextConfig = {
       @import "@/styles/breakpoints.scss";
     `,
   },
+  images: {
+    domains: ['cloud.codesupply.co'],
+    formats: ['image/avif', 'image/webp']
+  }
 }
 
 module.exports = nextConfig

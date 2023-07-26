@@ -1,0 +1,17 @@
+.post-list {
+  padding: 3rem 0;
+
+  @include mobile {
+    margin-top: 4.5rem;
+    padding: 1.2rem 0;
+  }
+
+  &__content {
+    max-width: 75rem;
+    padding: 0 1.2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
