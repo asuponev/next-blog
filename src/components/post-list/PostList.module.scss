@@ -1,8 +1,11 @@
 .post-list {
   padding: 3rem 0;
 
-  @include mobile {
+  @include tablet {
     margin-top: 4.5rem;
+  }
+
+  @include mobile {
     padding: 1.2rem 0;
   }
 

@@ -3,7 +3,7 @@
   background: $background-primary;
   border-bottom: 1px solid $color-border;
 
-  @include mobile {
+  @include tablet {
     border: none;
     position: fixed;
     top: 0;
@@ -30,7 +30,7 @@
     width: 1.6rem;
     height: 1.2rem;
 
-    @include mobile {
+    @include tablet {
       visibility: visible;
     }
   }
@@ -40,7 +40,7 @@
     width: 11.3rem;
     height: 1.7rem;
 
-    @include mobile {
+    @include tablet {
       width: 10.2rem;
       height: 1.5rem;
     }
