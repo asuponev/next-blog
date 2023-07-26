@@ -3,6 +3,10 @@
 
   @include tablet {
     margin-top: 4.5rem;
+
+    &--opensearch {
+      margin-top: 7rem;
+    }
   }
 
   @include mobile {
@@ -14,7 +18,11 @@
     padding: 0 1.2rem;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 48px 40px;
+
+    @include mobile {
+      gap: 32px;
+    }
   }
 }

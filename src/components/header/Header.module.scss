@@ -12,9 +12,6 @@
   }
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     max-width: 75rem;
     padding: 1.8rem 1.2rem 1.6rem;
     margin: 0 auto;
@@ -24,7 +21,14 @@
     }
   }
 
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   &__burger {
+    align-self: center;
+    justify-self: start;
     visibility: hidden;
     position: relative;
     width: 1.6rem;
@@ -39,6 +43,8 @@
     position: relative;
     width: 11.3rem;
     height: 1.7rem;
+    align-self: center;
+    justify-self: center;
 
     @include tablet {
       width: 10.2rem;
@@ -46,9 +52,36 @@
     }
   }
 
-  &__search {
+  &__search-icon {
+    align-self: center;
+    justify-self: end;
     position: relative;
     width: 1.2rem;
     height: 1.2rem;
+    cursor: pointer;
+  }
+
+  &__search-panel {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+
+    &__input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 0.5rem 1.5rem;
+      background: $color-search;
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      margin-right: 1.25rem;
+
+      &::placeholder {
+        color: $text-post-text;
+      }
+    }
   }
 }

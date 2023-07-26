@@ -1,5 +1,5 @@
 import { closeMenu, openMenu } from '@/store/menuSlice'
-import { useAppDispatch, useAppSelector } from './useState'
+import { useAppDispatch, useAppSelector } from './useStore'
 
 const useMenu = () => {
   const dispatch = useAppDispatch()

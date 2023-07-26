@@ -17,7 +17,7 @@ const MenuHeader: React.FC = () => {
         <Image
           src="/close-icon.svg"
           fill
-          alt="search"
+          alt="close-menu"
         />
       </div>
     </div>
