@@ -5,22 +5,30 @@ import styles from './Menu.module.scss'
 import MenuHeader from './menu-header/MenuHeader'
 
 const Menu: React.FC = () => {
-  const { isMenuOpen } = useMenu()
+  const { isMenuOpen, onCloseMenu } = useMenu()
 
   return (
-    <div className={`${styles.menu} ${isMenuOpen && styles.menu__open}`}>
-      <MenuHeader />
-      <nav>
-        <ul className={styles.menu__list}>
-          {menuLinks.map((link) => (
-            <MenuItem
-              key={link.title}
-              link={link}
-            />
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <>
+      <div className={`${styles.menu} ${isMenuOpen && styles.menu__open}`}>
+        <MenuHeader />
+        <nav>
+          <ul className={styles.menu__list}>
+            {menuLinks.map((link) => (
+              <MenuItem
+                key={link.title}
+                {...link}
+              />
+            ))}
+          </ul>
+        </nav>
+      </div>
+      {isMenuOpen && (
+        <div
+          className={styles.backarea}
+          onClick={onCloseMenu}
+        />
+      )}
+    </>
   )
 }
 

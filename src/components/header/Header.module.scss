@@ -5,6 +5,8 @@
 
   @include mobile {
     border: none;
+    position: fixed;
+    z-index: 10;
   }
 
   &__container {

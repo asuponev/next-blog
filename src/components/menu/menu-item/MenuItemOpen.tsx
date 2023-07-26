@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { IMenuOpenProps } from '@/types/menu.interface'
+import { IMenuInnerItem } from '@/types/menu.interface'
 import styles from '../Menu.module.scss'
 
-const MenuItemOpen: React.FC<IMenuOpenProps> = ({ items }) => {
+const MenuItemOpen: React.FC<{ items: IMenuInnerItem[] }> = ({ items }) => {
   return (
     <div className={styles.menu__item__open}>
-      {items.map((item) => (
+      {items.map((item, i) => (
         <Link
+          key={i}
           href={item.href}
           className={styles.menu__item__open__link}
         >

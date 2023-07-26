@@ -1,27 +1,14 @@
-import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { IMenuItemProps } from '@/types/menu.interface'
-import styles from '../Menu.module.scss'
+import { IMenuLink } from '@/types/menu.interface'
 import MenuItemOpen from './MenuItemOpen'
+import styles from '../Menu.module.scss'
 
-const MenuItem: React.FC<IMenuItemProps> = ({ link }) => {
-  const { title, innerItems, href } = link
-  const [isOpenItems, setIsOpenItems] = useState(false)
-
-  const onOpenItems = (): void => {
-    if (innerItems) {
-      setIsOpenItems(() => !isOpenItems)
-    }
-  }
-
+const MenuItem: React.FC<IMenuLink> = ({ title, innerItems, href }) => {
   return (
     <li className={styles.menu__item}>
-      <div
-        className={styles.menu__item__top}
-        onClick={onOpenItems}
-      >
+      <div className={styles.menu__item__top}>
         {href ? (
           <Link
             href={href}
@@ -33,12 +20,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ link }) => {
           <p className={styles.menu__item__title}>{title}</p>
         )}
         {innerItems && (
-          <div
-            className={`
-            ${styles.menu__item__arrow} 
-            ${isOpenItems && styles.menu__item__arrow__open}
-          `}
-          >
+          <div className={styles.menu__item__arrow}>
             <Image
               src="/menu-arrow-icon.svg"
               fill
@@ -47,7 +29,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ link }) => {
           </div>
         )}
       </div>
-      {isOpenItems && innerItems && <MenuItemOpen items={innerItems} />}
+      {innerItems && <MenuItemOpen items={innerItems} />}
     </li>
   )
 }

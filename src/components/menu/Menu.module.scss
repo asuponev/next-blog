@@ -9,6 +9,7 @@
     width: 320px;
     height: 100vh;
     position: fixed;
+    z-index: 20;
     top: 0;
     left: -320px;
     border: 1px solid $color-border;
@@ -38,7 +39,7 @@
 
   &__list {
     max-width: 75rem;
-    padding: 1.3rem 1.2rem 1.1rem;
+    padding: 0 1.2rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -56,6 +57,8 @@
 
   &__item {
     margin-right: 2rem;
+    padding: 1.3rem 0 1.1rem;
+    cursor: pointer;
 
     @include mobile {
       width: 100%;
@@ -75,7 +78,6 @@
     &__top {
       display: flex;
       align-items: center;
-      cursor: pointer;
     }
 
     &__title {
@@ -92,28 +94,26 @@
       height: 0.4rem;
       margin-left: 0.3rem;
       transition: transform 0.2s ease-in-out;
-
-      &__open {
-        transform: rotate(-180deg);
-      }
     }
 
     &__open {
-      display: flex;
+      display: none;
       flex-direction: column;
       padding: 1.25rem;
       position: absolute;
+      z-index: 10;
       top: 3.4rem;
       background: $background-primary;
       border: 1px solid $color-border;
       min-width: 11rem;
-  
+      cursor: default;
+
       @include mobile {
         position: static;
         border: none;
         padding: 1.25rem 0.5rem 0;
       }
-  
+
       &__link {
         display: flex;
         align-items: center;
@@ -122,28 +122,31 @@
         border-bottom: 1px solid $color-border;
         color: $text-primary;
         text-decoration: none;
-  
+
         &:first-child {
           padding-top: 0;
         }
-  
+
         &:last-child {
           border: none;
           padding-bottom: 0;
         }
+
+        &:hover,
+        &:active {
+          .menu__item__open__title {
+            color: $text-secondary;
+            transform: translateX(0.5rem);
+          }
+        }
       }
-  
+
       &__title {
         font-size: 0.8rem;
         font-weight: 400;
         transition: transform 0.2s ease-in-out;
-  
-        &:hover {
-          color: $text-secondary;
-          transform: translateX(0.5rem);
-        }
       }
-  
+
       &__arrow {
         position: relative;
         width: 0.5rem;
@@ -151,5 +154,32 @@
         transform: rotate(-90deg);
       }
     }
+
+    &:hover,
+    &:active {
+      .menu__item__arrow {
+        transform: rotate(-180deg);
+      }
+
+      .menu__item__open {
+        display: flex;
+      }
+    }
+  }
+}
+
+.backarea {
+  display: none;
+
+  @include mobile {
+    display: block;
+    position: fixed;
+    z-index: 15;
+    top: 0;
+    left: 0;
+    background: $background-primary;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
   }
 }
