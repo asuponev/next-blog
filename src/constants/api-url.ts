@@ -1,0 +1,1 @@
+export default 'https://cloud.codesupply.co/endpoint/react/data.json'
