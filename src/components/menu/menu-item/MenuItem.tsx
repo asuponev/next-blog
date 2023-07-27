@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { IMenuLink } from '@/types/menu.interface'
+import SvgRender from '@/components/svg-render/SvgRender'
 import MenuItemOpen from './MenuItemOpen'
 import styles from '../Menu.module.scss'
 
@@ -21,11 +21,7 @@ const MenuItem: React.FC<IMenuLink> = ({ title, innerItems, href }) => {
         )}
         {innerItems && (
           <div className={styles.menu__item__arrow}>
-            <Image
-              src="/menu-arrow-icon.svg"
-              fill
-              alt="open"
-            />
+            <SvgRender iconName='arrow' />
           </div>
         )}
       </div>

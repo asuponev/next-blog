@@ -1,15 +1,10 @@
-import Image from 'next/image'
-
+import SvgRender from '@/components/svg-render/SvgRender'
 import styles from '../Header.module.scss'
 
 const HeaderLogo: React.FC = () => {
   return (
     <div className={styles.header__logo}>
-      <Image
-        src="/logo.svg"
-        fill
-        alt="logo"
-      />
+      <SvgRender iconName='logo' />
     </div>
   )
 }

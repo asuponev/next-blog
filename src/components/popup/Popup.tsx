@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
-import Image from 'next/image'
 
 import BackArea from '@/components/back-area/BackArea'
+import SvgRender from '@/components/svg-render/SvgRender'
 import styles from './Popup.module.scss'
 
 interface IPostPopup {
@@ -23,11 +23,7 @@ const Popup: React.FC<PropsWithChildren<IPostPopup>> = ({
               className={styles.popup__close}
               onClick={onClose}
             >
-              <Image
-                src="/close-icon.svg"
-                fill
-                alt="close-search"
-              />
+              <SvgRender iconName='close' />
             </div>
           </div>
           {children}

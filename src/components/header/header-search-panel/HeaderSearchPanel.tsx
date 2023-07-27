@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import useSearch from '@/hooks/useSearch'
+import SvgRender from '@/components/svg-render/SvgRender'
 import styles from '../Header.module.scss'
 
 const HeaderSearchPanel: React.FC = () => {
@@ -20,11 +19,7 @@ const HeaderSearchPanel: React.FC = () => {
         className={styles['header__search-icon']}
         onClick={onCloseSearch}
       >
-        <Image
-          src="/close-icon.svg"
-          fill
-          alt="close-search"
-        />
+        <SvgRender iconName='close' />
       </div>
     </div>
   )

@@ -1,7 +1,6 @@
-import Image from 'next/image'
-
 import useMenu from '@/hooks/useMenu'
 import HeaderLogo from '@/components/header/header-logo/HeaderLogo'
+import SvgRender from '@/components/svg-render/SvgRender'
 import styles from '../Menu.module.scss'
 
 const MenuHeader: React.FC = () => {
@@ -14,11 +13,7 @@ const MenuHeader: React.FC = () => {
         className={styles.menu__header__close}
         onClick={onCloseMenu}
       >
-        <Image
-          src="/close-icon.svg"
-          fill
-          alt="close-menu"
-        />
+        <SvgRender iconName='close' />
       </div>
     </div>
   )

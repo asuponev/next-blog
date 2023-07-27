@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import useSearch from '@/hooks/useSearch'
+import SvgRender from '@/components/svg-render/SvgRender'
 import styles from '../Header.module.scss'
 
 const HeaderSearchIcon: React.FC = () => {
@@ -11,11 +10,7 @@ const HeaderSearchIcon: React.FC = () => {
       className={styles['header__search-icon']}
       onClick={onOpenSearch}
     >
-      <Image
-        src="/search-icon.svg"
-        fill
-        alt="search"
-      />
+      <SvgRender iconName='search' />
     </div>
   )
 }
