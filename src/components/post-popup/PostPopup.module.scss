@@ -8,12 +8,16 @@
     height: 24.625rem;
     overflow: hidden;
 
-    img {
-      object-fit: cover;
+    @include tablet {
+      height: calc((75vw - 1.2rem * 2) / (360 / 230));
     }
 
     @include mobile {
-      height: 20rem;
+      height: calc((100vw - 1.2rem * 2) / (360 / 230));
+    }
+
+    img {
+      object-fit: cover;
     }
   }
 
