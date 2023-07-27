@@ -20,7 +20,8 @@
     z-index: 20;
     top: 0;
     left: -21rem;
-    border: 0.06rem solid $color-border;
+    border-bottom: none;
+    border-right: 0.06rem solid $color-border;
     transition: left 0.3s ease-in-out;
 
     &--open {
