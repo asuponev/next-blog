@@ -2,9 +2,10 @@ import useMenu from '@/hooks/useMenu'
 import useScroll from '@/hooks/useScroll'
 import useWindowWidth from '@/hooks/useWindowWidth'
 import menuLinks from '@/constants/menu-links'
+import BackArea from '@/components/back-area/BackArea'
 import MenuItem from './menu-item/MenuItem'
-import styles from './Menu.module.scss'
 import MenuHeader from './menu-header/MenuHeader'
+import styles from './Menu.module.scss'
 
 const Menu: React.FC = () => {
   const { isMenuOpen, onCloseMenu } = useMenu()
@@ -29,12 +30,10 @@ const Menu: React.FC = () => {
           </ul>
         </nav>
       </div>
-      {isMenuOpen && (
-        <div
-          className={styles.backarea}
-          onClick={onCloseMenu}
-        />
-      )}
+      <BackArea
+        isOpen={isMenuOpen}
+        onClose={onCloseMenu}
+      />
     </>
   )
 }

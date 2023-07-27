@@ -1,36 +1,30 @@
-.post {
-  width: calc(100% / 3 - 80px / 3);
-  cursor: pointer;
-
-  @include tablet {
-    width: calc(100% / 2 - 40px / 2);
-  }
-
-  @include mobile {
-    width: 100%;
-  }
+.post-popup {
+  display: flex;
+  flex-direction: column;
 
   &__image {
     position: relative;
     width: 100%;
-    height: 14.375rem;
+    height: 24.625rem;
     overflow: hidden;
 
     img {
       object-fit: cover;
-      transition: scale 0.3s ease-in-out;
-
-      &:hover {
-        scale: 1.05;
-      }
     }
+
+    @include mobile {
+      height: 20rem;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem 2rem 4rem;
   }
 
   &__tags {
     color: $color-red;
     font-size: 0.8rem;
     font-weight: 700;
-    margin-top: 1rem;
   }
 
   &__title {
@@ -38,6 +32,7 @@
     font-weight: 700;
     line-height: 125%;
     margin-top: 1rem;
+    color: $background-primary;
   }
 
   &__meta {
@@ -46,24 +41,24 @@
     font-size: 0.75rem;
     line-height: 100%;
     margin-top: 1rem;
-    color: $text-post-meta;
+    color: $text-popup-meta;
   }
 
   &__author {
     font-weight: 500;
-    color: $text-primary;
+    color: $background-primary;
   }
 
   &__divider {
     width: 0.2rem;
     height: 0.2rem;
-    background: $color-divider;
+    background: $text-popup-meta;
     margin: 0 0.35rem;
   }
 
   &__text {
     font-size: 0.875rem;
-    color: $text-post-text;
+    color: $text-popup-text;
     line-height: 142.857%;
     margin-top: 1rem;
   }

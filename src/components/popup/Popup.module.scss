@@ -1,0 +1,39 @@
+.popup {
+  position: fixed;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: $text-primary;
+
+  @include tablet {
+    width: 75%;
+  }
+
+  @include mobile {
+    width: calc(100% - 40px);
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__header {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 21;
+    background: $background-primary;
+  }
+
+  &__close {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+}
